@@ -92,26 +92,26 @@ int _stdcall WinMain(struct HINSTANCE__* hinstance, struct HINSTANCE__* hprevins
 	bool set_visible = true;
 	bool nowait = false, nolog = false, user = false, dump = false, custom_file = false, mac = false, world = false; //ghetto as fuck
 	string custom_path{};
-	stringstream memes{};
+	stringstream help{};
 	for (int i = 0; i < __argc; i++) {
 		std::string arg(__argv[i]);
 		if (arg == "-help") {
-			memes << "Supported arguments:" << endl;
-			memes << "-help.............well this command" << endl;
-			memes << "-hide.............no console" << endl;
-			memes << "-nowait...........doesnt wait for key press on exit" << endl;
-			memes << "-path=file........uses custom file path instead of gts default one" << endl;
-			memes << "-world............gets the last world of the user, if there is one specified. If not it prints NOWORLD" << endl
+			help << "Supported arguments:" << endl;
+			help << "-help.............well this command" << endl;
+			help << "-hide.............no console" << endl;
+			help << "-nowait...........doesnt wait for key press on exit" << endl;
+			help << "-path=file........uses custom file path instead of gts default one" << endl;
+			help << "-world............gets the last world of the user, if there is one specified. If not it prints NOWORLD" << endl
 				<< "..................if nolog is specified it prints it after the password" << endl
 				<< "..................if mac is specified on top of nolog, it prints it before mac" << endl;
-			memes << "-mac..............gets the mac address of the user that gt would use. its needed for aap bypass" << endl
+			help << "-mac..............gets the mac address of the user that gt would use. its needed for aap bypass" << endl
 				<< "..................if nolog is specified it appends after pass or user:pass with a newline inbetween." << endl;
-			memes << "-nolog............does not log anything except the password as output. (and username if the option is on)" << endl
+			help << "-nolog............does not log anything except the password as output. (and username if the option is on)" << endl
 				<< "..................if its not found it instead returns ERROR_TANKPW if tankid_password field is not found" << endl
 				<< "..................if the input file is not found it instead returns ERROR_FILE." << endl;
-			memes << "-user.............prints the username before the password so its in the format user:pass" << endl
+			help << "-user.............prints the username before the password so its in the format user:pass" << endl
 				<< "..................if tankid_username is not found, instead prints ERROR_NAME:pass" << endl;
-			memes << "-dump.............dumps all of the information saved on save.dat in their proper format." << endl << endl;
+			help << "-dump.............dumps all of the information saved on save.dat in their proper format." << endl << endl;
 		}
 		else if (arg == "-hide")
 			set_visible = false;
@@ -134,13 +134,12 @@ int _stdcall WinMain(struct HINSTANCE__* hinstance, struct HINSTANCE__* hprevins
 			custom_path = copy;
 		}
 	}
-	mac = true;
 	if (set_visible) {
 		AllocConsole();
 		freopen("conin$", "r", stdin);
 		freopen("conout$", "w", stdout);
 		freopen("conout$", "w", stderr);
-		printf("%s", memes.str().c_str());
+		printf("%s", help.str().c_str());
 	}
 
 	if (!nolog) {
