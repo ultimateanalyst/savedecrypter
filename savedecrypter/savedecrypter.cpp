@@ -6,8 +6,8 @@
 #include <conio.h>
 #include <string>
 #include <cstdarg>
-#include "Variant.hpp"
-#include "VariantDB.h"
+#include "proton/Variant.hpp"
+#include "proton/vardb.h"
 #include <sstream>
 #include <stdlib.h>
 #include <tchar.h>

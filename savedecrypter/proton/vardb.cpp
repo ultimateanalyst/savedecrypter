@@ -1,5 +1,5 @@
 #pragma once
-#include "VariantDB.h"
+#include "vardb.h"
 
 #ifndef SAFE_DELETE
 #define SAFE_DELETE(p)      { if(p) { delete (p); (p)=NULL; } }

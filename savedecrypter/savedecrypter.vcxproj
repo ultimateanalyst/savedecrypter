@@ -155,14 +155,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="savedecrypter.cpp" />
-    <ClCompile Include="Variant.cpp" />
-    <ClCompile Include="VariantDB.cpp" />
+    <ClCompile Include="proton\Variant.cpp" />
+    <ClCompile Include="proton\vardb.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="plat.h" />
-    <ClInclude Include="rtRect.h" />
-    <ClInclude Include="Variant.hpp" />
-    <ClInclude Include="VariantDB.h" />
+    <ClInclude Include="proton\plat.h" />
+    <ClInclude Include="proton\rtRect.h" />
+    <ClInclude Include="proton\Variant.hpp" />
+    <ClInclude Include="proton\vardb.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
